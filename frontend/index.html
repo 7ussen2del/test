@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>To-Do List</h1>
+      <p class="app__subtitle">A simple task list backed by MySQL.</p>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <label class="sr-only" for="task-input">New task</label>
+      <input
+        id="task-input"
+        class="task-form__input"
+        type="text"
+        name="title"
+        placeholder="What needs to be done?"
+        maxlength="255"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" class="task-form__button">Add task</button>
+    </form>
+
+    <p id="error-message" class="error-message" role="alert" hidden></p>
+
+    <section class="task-section">
+      <div class="task-section__meta">
+        <span id="task-count">0 tasks</span>
+        <button id="refresh-button" type="button" class="link-button">Refresh</button>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+      <p id="empty-state" class="empty-state" hidden>
+        No tasks yet. Add your first one above.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
